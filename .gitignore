@@ -1,0 +1,13 @@
+3D/
+depth_estimation/
+__pycache__/
+logs/
+logs copy/
+# eval/
+rl3d/
+dreamerv2/
+outputs/
+wandb/
+exp_local/
+*egg-info/
+*.gif
