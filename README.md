@@ -63,6 +63,5 @@ bash scripts/train.sh
 ## License & Acknowledgements
 MoVie is licensed under the MIT license. MuJoCo is licensed under the Apache 2.0 license. 
 
-We utilize the official implementation of TD-MPC and MoDem  which are available at \href{https://github.com/nicklashansen/tdmpc/}{github.com/nicklashansen/tdmpc} and \href{https://github.com/facebookresearch/modem/}{github.com/facebookresearch/modem} as the model-based reinforcement learning codebase. And the xArm environment is taken from:  
-https://github.com/jangirrishabh/look-closer
+We utilize the official implementation of TD-MPC and MoDem  which are available at https://github.com/nicklashansen/tdmpc and https://github.com/facebookresearch/modem as the model-based reinforcement learning codebase. And the xArm environment is taken from: https://github.com/jangirrishabh/look-closer.
 
