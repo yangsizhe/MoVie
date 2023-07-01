@@ -1,0 +1,22 @@
+# Task List (18)
+- DMControl (11)
+  - cheetah-run
+  - cup-catch
+  - finger-spin
+  - finger-turn-easy
+  - finger-turn-hard
+  - pendulum-swingup
+  - reacher-easy
+  - reacher-hard
+  - walker-stand
+  - walker-walk
+  - walker-run
+- xArm (4)
+  - reach
+  - push
+  - pegbox
+  - hammer all
+- adroit (3)
+  - door
+  - hammer 
+  - pen
