@@ -21,7 +21,7 @@ dependencies:
     - patchelf==0.14.5.0
     - protobuf==3.20.1
     - scipy==1.9.3
-    - tqdm==4.64.0
+    - tqdm==4.64.0 
     - xmltodict==0.13.0
     - transforms3d==0.4.1
     - absl-py==1.1.0

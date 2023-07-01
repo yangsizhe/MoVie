@@ -52,7 +52,7 @@ def make_env(domain_name, task_name, difficulty, fov=0, is_shake=False, is_movin
             episode_length=50,
             n_substeps=20,
             frame_stack=frame_stack,
-            image_size=84,
+            image_size=84, 
             cameras=['third_person'],  # ['third_person', 'first_person']
             observation_type='image', 
             action_space='xy' if task_name=='reach' or task_name=='push' else 'xyz',  # Reach, Push: 'xy'.  Pegbox, Hammerall: 'xyz'

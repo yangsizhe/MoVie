@@ -5,7 +5,6 @@ import torch.nn as nn
 import torch.nn.functional as F
 from torch import distributions as pyd
 from torch.distributions.utils import _standard_normal
-from algorithm.transform import TransformNet
 
 __REDUCE__ = lambda b: 'mean' if b else 'none'
 

@@ -8,9 +8,9 @@ lr_transforms_stn:
   - 1e-5
 
 # wandb
-wandb_entity:  
+wandb_entity: 
 wandb_key: 
-wandb_project: 
+wandb_project:  
 
 checkpoints_path: 
 exp_disc: ${task}/${viewgen_type}/lr_transforms_stn=${lr_transforms_stn},lr_e=${lr_encoder}/${ssl_task}

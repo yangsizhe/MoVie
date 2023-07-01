@@ -124,7 +124,7 @@ def evaluate(env, agent, buffer, num_episodes, ssl_task, video, cfg=None):
 	return np.mean(episode_rewards), np.nanmean(episode_success)
 
 
-def main_viewgen_exp(cfg):
+def main_viewgen_exp(cfg): 
 	set_seed(cfg.seed)
 	import wandb
 

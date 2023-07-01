@@ -296,7 +296,7 @@ class TDMPC():
 
 		ssl_loss = 0
 		
-		if ssl_task == 'idm':
+		if ssl_task == 'idm': 
 			ssl_loss += idm_loss
 
 			self.model.inv_optim.zero_grad()

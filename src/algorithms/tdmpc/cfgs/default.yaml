@@ -7,7 +7,7 @@ episode_length: 1000/${action_repeat}
 train_steps: 500000/${action_repeat}
  
 # planning
-iterations: 6
+iterations: 6 
 num_samples: 512
 num_elites: 64
 mixture_coef: 0.05

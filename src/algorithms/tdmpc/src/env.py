@@ -9,7 +9,7 @@ import gym
 from gym.wrappers import TimeLimit
 import warnings
 warnings.filterwarnings("ignore", category=DeprecationWarning) 
-import distracting_control_viewgen
+import distracting_control_viewgen 
 
 class ExtendedTimeStep(NamedTuple):
 	step_type: Any
