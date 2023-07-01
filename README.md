@@ -20,10 +20,6 @@ conda env create -f environment.yaml
 conda activate movie
 ```
 
-Install Adroit:
-
-add `src/algorithms/modem/modem/tasks/mj_envs` to your `PYTHONPATH ` 
-
 Install xArm:
 
 ```
