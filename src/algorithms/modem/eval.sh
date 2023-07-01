@@ -1,1 +1,1 @@
-CUDA_VISIBLE_DEVICES=6 python eval_adaptation.py suite=adroit task=adroit-door
+CUDA_VISIBLE_DEVICES=0 python eval_adaptation.py suite=adroit task=adroit-door

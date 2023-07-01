@@ -40,6 +40,7 @@ def distraction_wrap_xarm(env, difficulty, fov=0, is_shake=False, is_moving=Fals
 
 def make_env(domain_name, task_name, difficulty, fov=0, is_shake=False, is_moving=False, is_dynamic=False, is_phi=True, is_theta=True, is_r=False, is_theta_roll=False, seed=0, frame_stack=3):
     if domain_name == 'adroit':
+        import sys; sys.path.append(f'{os.path.dirname(os.path.abspath(__file__))}/../../mj_envs')
         env_id = task_name.split("-", 1)[-1] + "-v0"
         env = gym.make(env_id)
         env = distraction_wrap_adroit(env, domain_name, difficulty=difficulty, fov=fov, is_shake=is_shake, is_moving=is_moving, is_dynamic=is_dynamic, is_phi=is_phi, is_theta=is_theta, is_r=is_r, is_theta_roll=is_theta_roll)

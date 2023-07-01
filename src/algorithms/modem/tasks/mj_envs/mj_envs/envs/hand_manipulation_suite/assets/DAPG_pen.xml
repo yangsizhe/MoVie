@@ -26,7 +26,7 @@
         <!-- Cameras for the VIL paper -->
         <camera name="vil_camera" pos="0 -1.2 1.2" quat="0.92388 0.382683 0 0" />
         <!-- <camera name="view_1" pos="-0.8 -0.8 0.8" euler="0.785 -0.785 -0.785" /> -->
-        <camera name="view_1" pos="-0.8 -0.8 0.8" euler="0.785 -0.785 -3" mode="targetbodycom" target="camera_target"/>  <!--mode="targetbody" target="camera_target"-->
+        <camera name="view_1" pos="-0.8 -0.8 0.8" euler="0.785 -0.785 -3"/>  
         <body name="camera_target" pos="0.1994 -0.14972  0.1066" euler="0.0 -0.785 -0.785">  <!-- "0.1794 -0.1072  0.1066" -->
             <geom conaffinity="0" contype="0" pos="0 0 0" rgba="0 0 1 0" size="0.0475 0.0475 0.001" type="box"></geom>
         </body>

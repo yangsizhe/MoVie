@@ -18,8 +18,7 @@ from tqdm import tqdm
 import wandb
 import hydra
 from cfg_parse import parse_cfg
-import sys
-sys.path.append(f'{os.path.dirname(os.path.abspath(__file__))}/tasks/mj_envs')
+
 
 class ReplayBuffer():
     def __init__(self, capacity, obs_shape, state_dim, action_shape):

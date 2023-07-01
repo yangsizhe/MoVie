@@ -41,31 +41,30 @@ cd ../../..
 ```
 
 
+To train the policies, you can refer to [TD-MPC](https://github.com/nicklashansen/tdmpc) and [MoDem](https://github.com/facebookresearch/modem). You will need to configure `wandb` and your `demonstration`/`logging` directories in `cfg/config.yaml` for MoDem, and configure `wandb` in `cfgs/default.yaml` for TD-MPC. Then run the training scripts:
 
-
-
-
-
-
-
-         
-
-
-For modem:  
-configure wandb, `project_dir` and `model_path` in `cfgs/config_adaptation.yaml`(used for test time adaptation) and configure wandb and your demonstration/logging directories in `cfgs/config.yaml`(used for training).  
-supported tasks: adroit, metaworld  
-train with `train.sh` and eval with `eval.sh`      
-
-For tdmpc:  
-configure wandb, `model_path` and `eval_dir` in `cfgs/default_adaptation.yaml`(used for test time adaptation), and configure wandb in `cfgs/default.yaml`(used for training).  
-supported tasks: dmc  
-train with `train.sh` and eval with `eval.sh`   
-
-(I will upload model files later.)  
-
-After installing dependencies, you can train an agent by using the provided script
 ```
-bash scripts/train.sh
+# For TD-MPC
+cd src/algorithms/tdmpc
+bash train.sh
+
+# For MoDem
+cd src/algorithms/modem
+bash train.sh
+```
+
+We also provide trained policies for all 18 tasks of our test platform in `checkpoints`.
+
+To adapt the visual model-based policies for view generalization during test time, you will need to configure `wandb` in `cfg/config_adaptation.yaml` for MoDem policies and in `cfgs/default_adaptation.yaml` for TD-MPC policies. Then run the scripts:
+
+```
+# For TD-MPC
+cd src/algorithms/tdmpc
+bash eval.sh
+
+# For MoDem
+cd src/algorithms/modem
+bash eval.sh
 ```
 
 ## License & Acknowledgements
