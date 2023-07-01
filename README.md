@@ -70,5 +70,5 @@ bash eval.sh
 ## License & Acknowledgements
 MoVie is licensed under the MIT license. MuJoCo is licensed under the Apache 2.0 license. 
 
-We utilize the official implementation of TD-MPC and MoDem  which are available at https://github.com/nicklashansen/tdmpc and https://github.com/facebookresearch/modem as the model-based reinforcement learning codebase. And the xArm environment is taken from: https://github.com/jangirrishabh/look-closer. We thank the authors for their implementation.
+We utilize the official implementation of [TD-MPC](https://github.com/nicklashansen/tdmpc) and [MoDem](https://github.com/facebookresearch/modem) as the model-based reinforcement learning codebase. And the xArm environment is taken from [here](https://github.com/jangirrishabh/look-closer). We thank the authors for their implementation.
 
