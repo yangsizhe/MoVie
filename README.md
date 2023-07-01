@@ -75,7 +75,7 @@ cd src/algorithms/modem
 bash eval.sh
 ```
 
-Refer to the `cfgs` directory for a full list of options and default hyperparameters, and see `tasks.txt` for a list of supported tasks.
+Refer to the `cfgs` directory for a full list of options and default hyperparameters, and see `README.md` for a list of supported tasks.
 
 
 ## License & Acknowledgements
