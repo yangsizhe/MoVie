@@ -9,6 +9,10 @@ Original PyTorch implementation of **MoVie** from
   <br><img src='media/overview.png' width="700"/><br>
 </p>
 
+<p align="center">
+  <br><img src='media/bar_chart.png' width="700"/><br>
+</p>
+
 ## Method
 MoVie is an effective approach to enable successful adaptation of visual model-based policies for view generalization during test time, without any need for reward signals and any modification during training time.
 
