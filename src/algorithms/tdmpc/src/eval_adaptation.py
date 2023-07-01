@@ -102,9 +102,7 @@ def evaluate(env, agent, buffer, num_episodes, ssl_task, video, cfg=None):
 			action = ep_agent.plan(obs, eval_mode=True, step=1e10, t0=step==0) 
 			ep_agent.model.train(True)
 			next_obs, reward, done, info = env.step(action.cpu().numpy())
-			wandb.log({'step_reward': reward}) 
 			episode_reward += reward
-			wandb.log({f'cumulative_reward_{i}': episode_reward})
 			buffer.add(obs, action, next_obs)
 
 			if ssl_task != 'no':
@@ -143,7 +141,7 @@ def main_viewgen_exp(cfg):
 	env = make_env_via_viewgen_type(cfg, cfg.viewgen_type)
 
 	agent = TDMPC(cfg)
-	agent.load(fp=f'{os.path.dirname(os.path.abspath(__file__))}/{cfg.checkpoints_path}/{cfg.task}/model.pt')
+	agent.load(fp=f'{cfg.checkpoints_path}/{cfg.task}/model.pt')
 	agent.model.adaptation_init(cfg)
         
 	reward, success_rate = 0, 0
@@ -153,8 +151,8 @@ def main_viewgen_exp(cfg):
         name=str(cfg.seed),
 		config=OmegaConf.to_container(cfg, resolve=True))
 	buffer = ReplayBuffer(cfg.buffer_size, (cfg.frame_stack*3, 84, 84), env.action_space.shape)                
-	reward, success_rate = evaluate(env=env, agent=agent, buffer=buffer, num_episodes=cfg.num_episodes, ssl_task=cfg.ssl_task, video=video, adapt=True, cfg=cfg)
-	print(f'{cfg.difficulty}_{cfg.fov}_{cfg.is_shaking}_{cfg.is_moving},{cfg.ssl_task}###  ', 'reward: ', reward, 'success_rate: ', success_rate)
+	reward, success_rate = evaluate(env=env, agent=agent, buffer=buffer, num_episodes=cfg.num_episodes, ssl_task=cfg.ssl_task, video=video, cfg=cfg)
+	print(f'{cfg.viewgen_type},{cfg.ssl_task}###  ', 'reward: ', reward, 'success_rate: ', success_rate)
 	wandb.finish()
         
 		

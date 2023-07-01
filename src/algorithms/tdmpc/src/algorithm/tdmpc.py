@@ -294,7 +294,7 @@ class TDMPC():
 		action_pred = self.model.ssl_models['inv'](z, z_next)
 		idm_loss = F.mse_loss(action, action_pred)
 
-		ssl_loss = 0, 0
+		ssl_loss = 0
 		
 		if ssl_task == 'idm':
 			ssl_loss += idm_loss

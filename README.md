@@ -13,7 +13,19 @@ Original PyTorch implementation of **MoVie** from
 MoVie is an effective approach to enable successful adaptation of visual model-based policies for view generalization during test time, without any need for reward signals and any modification during training time.
 
 ## Instructions
-Assuming that you already have [MuJoCo](http://www.mujoco.org) installed, install dependencies using `conda`:
+Install [MuJoCo](http://www.mujoco.org):
+
+```
+sudo apt-get install make gcc libosmesa6-dev patchelf xvfb libgl1-mesa-glx libglfw3 -y
+wget https://mujoco.org/download/mujoco210-linux-x86_64.tar.gz
+tar -zxvf mujoco210-linux-x86_64.tar.gz
+mkdir -p ~/.mujoco && mv ./mujoco210 ~/.mujoco/mujoco210
+LD_LIBRARY_PATH=$HOME/.mujoco/mujoco210/bin 
+echo "export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${HOME}/.mujoco/mujoco210/bin" >> ~/.bashrc
+source ~/.bashrc
+```
+
+Install dependencies using `conda`:
 
 ```
 conda env create -f environment.yaml
@@ -51,7 +63,7 @@ bash train.sh
 
 We also provide trained policies for all 18 tasks of our test platform in `checkpoints`.
 
-To adapt the visual model-based policies for view generalization during test time, you will need to configure `wandb` in `cfg/config_adaptation.yaml` for MoDem policies and in `cfgs/default_adaptation.yaml` for TD-MPC policies. Then run the scripts:
+To adapt the visual model-based policies for view generalization during test time, you will need to configure `wandb` and `checkpoints_path`in `cfg/config_adaptation.yaml` for MoDem policies and in `cfgs/default_adaptation.yaml` for TD-MPC policies. Then run the scripts:
 
 ```
 # For TD-MPC

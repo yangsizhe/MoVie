@@ -3,8 +3,8 @@ channels:
   - defaults
 dependencies:
   - python=3.8
-  - pytorch
-  - torchvision
+  # - pytorch
+  # - torchvision
   # - cudatoolkit=11.1
   - pip
   - pip:
@@ -34,6 +34,10 @@ dependencies:
     - pillow==9.4.0
     - tensorboard==2.11.0
     - git+https://github.com/aravindr93/mjrl.git
+    - torch
+    - torchvision
+    - cffi==1.15.1
+    - opencv-python
 
 
     # LD_LIBRARY_PATH=$HOME/.mujoco/mujoco210/bin pip3 install -U 'mujoco-py<2.2,>=2.1'

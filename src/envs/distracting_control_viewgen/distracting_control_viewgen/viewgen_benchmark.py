@@ -1,5 +1,4 @@
 import numpy as np
-from PIL import Image
 import os
 os.environ['MKL_SERVICE_FORCE_INTEL'] = '1'
 os.environ['MUJOCO_GL'] = 'egl'
@@ -43,7 +42,7 @@ def make_env(domain_name, task_name, difficulty, fov=0, is_shake=False, is_movin
         import sys; sys.path.append(f'{os.path.dirname(os.path.abspath(__file__))}/../../mj_envs')
         env_id = task_name.split("-", 1)[-1] + "-v0"
         env = gym.make(env_id)
-        env = distraction_wrap_adroit(env, domain_name, difficulty=difficulty, fov=fov, is_shake=is_shake, is_moving=is_moving, is_dynamic=is_dynamic, is_phi=is_phi, is_theta=is_theta, is_r=is_r, is_theta_roll=is_theta_roll)
+        env = distraction_wrap_adroit(env, difficulty=difficulty, fov=fov, is_shake=is_shake, is_moving=is_moving)
     elif domain_name == 'xarm':
         from xarm.wrappers import make_env
         env = make_env(
@@ -58,7 +57,7 @@ def make_env(domain_name, task_name, difficulty, fov=0, is_shake=False, is_movin
             observation_type='image', 
             action_space='xy' if task_name=='reach' or task_name=='push' else 'xyz',  # Reach, Push: 'xy'.  Pegbox, Hammerall: 'xyz'
         )
-        env = distraction_wrap_xarm(env, domain_name, difficulty=difficulty, fov=fov, is_shake=is_shake, is_moving=is_moving, is_dynamic=is_dynamic, is_phi=is_phi, is_theta=is_theta, is_r=is_r, is_theta_roll=is_theta_roll)
+        env = distraction_wrap_xarm(env, difficulty=difficulty, fov=fov, is_shake=is_shake, is_moving=is_moving)
     else:
         env = dm_control_suite.load(domain_name, task_name)
         env = distraction_wrap_dmc(env, domain_name, difficulty=difficulty, fov=fov, is_shake=is_shake, is_moving=is_moving, is_dynamic=is_dynamic, is_phi=is_phi, is_theta=is_theta, is_r=is_r, is_theta_roll=is_theta_roll)

@@ -3,10 +3,7 @@ import torch.nn as nn
 import torch.optim as optim
 import torch.nn.functional as F
 import torchvision
-from torchvision import datasets, transforms
-import matplotlib.pyplot as plt
-import numpy as np
-from PIL import Image
+
 
 class TransformNet_STN_PerImage(nn.Module):
     def __init__(self, num_channels):

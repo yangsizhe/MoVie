@@ -18,6 +18,8 @@ from tqdm import tqdm
 import wandb
 import hydra
 from cfg_parse import parse_cfg
+import sys; sys.path.append(f'{os.path.dirname(os.path.abspath(__file__))}/../../envs/mj_envs')
+import mj_envs.envs.hand_manipulation_suite
 
 
 class ReplayBuffer():
@@ -140,7 +142,7 @@ def main_viewgen_exp(cfg):
 	env = make_env_via_viewgen_type(cfg, cfg.viewgen_type)
         
 	agent = TDMPC(cfg)
-	agent.load(fp=f'{os.path.dirname(os.path.abspath(__file__))}/{cfg.checkpoints_path}/{cfg.task}/model.pt')
+	agent.load(fp=f'{cfg.checkpoints_path}/{cfg.task}/model.pt')
 	agent.model.adaptation_init(cfg)
 	
 	reward, success_rate = 0, 0
@@ -151,7 +153,7 @@ def main_viewgen_exp(cfg):
 		config=OmegaConf.to_container(cfg, resolve=True))
 	buffer = ReplayBuffer(cfg.buffer_size, (cfg.frame_stack * 3, cfg.img_size, cfg.img_size), cfg.state_dim, env.action_space.shape)                
 	reward, success_rate = evaluate(env=env, agent=agent, buffer=buffer, num_episodes=cfg.num_episodes, ssl_task=cfg.ssl_task, video=video, cfg=cfg)
-	print(f'{cfg.difficulty}_{cfg.fov}_{cfg.is_shaking}_{cfg.is_moving},{cfg.ssl_task}###  ', 'reward: ', reward, 'success_rate: ', success_rate)
+	print(f'{cfg.viewgen_type}###  ', 'reward: ', reward, 'success_rate: ', success_rate)
 	wandb.finish()
 		    	
 		

@@ -12,7 +12,7 @@ wandb_entity:
 wandb_key: 
 wandb_project: 
 
-checkpoints_path: ../../../../checkpoints
+checkpoints_path: 
 exp_disc: ${task}/${viewgen_type}/lr_transforms_stn=${lr_transforms_stn},lr_e=${lr_encoder}/${ssl_task}
 eval_dir: logs/eval/${exp_disc}/${seed}
 num_episodes: 20
