@@ -1,0 +1,47 @@
+name: viewgen
+channels:
+  # - pytorch
+  - anaconda
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.8
+  # - pytorch=1.11.0
+  # - torchvision=0.12.0
+  # - cudatoolkit=11.3.1
+  # - glew=2.1.0=h9c3ff4c_2
+  # - glib=2.69.1=h4ff587b_1
+  # - pillow=9.0.1
+  - pip=21.2.4
+  # - pip:
+  #   - absl-py==1.1.0
+  #   - gpustat==0.6.0
+  #   - glfw==2.5.3
+  #   - kornia==0.6.5
+  #   - termcolor==1.1.0
+  #   - omegaconf==2.1.1
+  #   - gym==0.21.0
+  #   - pandas==1.4.2
+  #   - wandb==0.12.19
+  #   - moviepy==1.0.3
+  #   - ffmpeg==1.4
+  #   - imageio==2.19.3
+  #   - imageio-ffmpeg==0.4.7
+  #   - mujoco
+  #   - mujoco-py==2.1.2.14
+  #   - lxml==4.9.1
+  #   - pyparsing
+  #   - hydra-core==1.1.1
+  #   - hydra-submitit-launcher==1.2.0
+  #   - patchelf==0.14.5.0
+  #   - protobuf==3.20.1
+  #   - scipy==1.9.3
+  #   - tqdm==4.64.0
+  #   - xmltodict==0.13.0
+  #   - transforms3d==0.4.1
+
+    # - git+https://github.com/aravindr93/mjrl.git
+
+    # dm-control==1.0.9 absl-py gpustat glfw kornia==0.6.5 termcolor==1.1.0 omegaconf==2.1.1 gym==0.21.0 pandas==1.4.2 wandb moviepy==1.0.3 ffmpeg==1.4 imageio imageio-ffmpeg mujoco lxml==4.9.1 pyparsing hydra-core==1.1.1 hydra-submitit-launcher==1.2.0 patchelf==0.14.5.0 protobuf==3.20.1 scipy==1.9.3 tqdm==4.64.0 xmltodict==0.13.0 transforms3d==0.4.1
+
+    # LD_LIBRARY_PATH=$HOME/.mujoco/mujoco210/bin pip3 install -U 'mujoco-py<2.2,>=2.1'

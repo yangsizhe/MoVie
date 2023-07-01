@@ -1,0 +1,41 @@
+name: movie
+channels:
+  - defaults
+dependencies:
+  - python=3.8
+  - pytorch
+  - torchvision
+  # - cudatoolkit=11.1
+  - pip
+  - pip:
+    - gym==0.21.0
+    - dm-control==1.0.9
+    - wandb==0.15.0
+    - moviepy==1.0.3
+    - imageio==2.9.0
+    - imageio-ffmpeg==0.4.4
+    - lxml==4.9.1 
+    - pyparsing
+    - hydra-core==1.1.1
+    - hydra-submitit-launcher==1.2.0
+    - patchelf==0.14.5.0
+    - protobuf==3.20.1
+    - scipy==1.9.3
+    - tqdm==4.64.0
+    - xmltodict==0.13.0
+    - transforms3d==0.4.1
+    - absl-py==1.1.0
+    - termcolor==1.1.0
+    - omegaconf==2.1.1
+    - pandas==1.4.2 
+    - glfw==2.5.3
+    - mujoco-py==2.1.2.14
+    - numpy==1.19.5
+    - pillow==9.4.0
+    - tensorboard==2.11.0
+    - git+https://github.com/aravindr93/mjrl.git
+
+
+    # LD_LIBRARY_PATH=$HOME/.mujoco/mujoco210/bin pip3 install -U 'mujoco-py<2.2,>=2.1'
+
+
