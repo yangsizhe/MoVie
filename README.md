@@ -1,5 +1,7 @@
 # MoVie: Visual Model-Based Policy Adaptation for View Generalization
+
 <h2 align="center">NeurIPS 2023</h2>
+
 Original PyTorch implementation of **MoVie** from
 
 [MoVie: Visual Model-Based Policy Adaptation for View Generalization](https://yangsizhe.github.io/MoVie/) by
